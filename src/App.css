@@ -1,38 +1,91 @@
-.App {
+:root{
+  --primary-color: #C9D0C7;
+  --light-black: rgba(0, 0, 0, 0.514);
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html{
+  font-size: 62.5%;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--primary-color);
+  font-size: 1.6rem;
+}
+.container > div{
+  /* background-color: rgb(143, 47, 143); */
+  width: 90%;
+  margin: auto;
+  
+}
+
+.wrapper h1{
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.label-text{
+  display: block;
+  margin-bottom: .7rem;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(4,1fr);
+  /* background-color: antiquewhite; */
+}
+.grid-item{
+  padding: 1rem 5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.grid-item input[type="text"], 
+input[type="email"],
+select {
+  width: 100%;
+  padding: 1rem;
+  border-radius: .3rem;
+  outline: none;
+  border-color: var(--light-black);
+  font-size: 1.4rem;
+}
+input[type="radio"]{
+  margin-left: 1rem;
+}
+.gender-label{
+  margin: 3px;
+}
+.message{
+  grid-column: 1 span;
+}
+.btn{
+  padding: 1.4rem 4rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: var(--light-black);
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.grid-item-btn{
+  grid-column: 1/2;
+}
+
+@media (max-width:768px) {
+  .grid-container{
+    grid-template-columns: repeat(2,1fr);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width:635px) {
+  .grid-container{
+    grid-template-columns: repeat(1,1fr);
   }
 }
